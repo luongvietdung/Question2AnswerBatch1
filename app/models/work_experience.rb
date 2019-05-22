@@ -6,7 +6,7 @@ class WorkExperience < ApplicationRecord
 
   def end_date_after_start_date
     if end_time < start_time
-    errors.add :end_time, "Must be after start date"
+      errors.add :end_time, "Must be after start date"
     end
   end
 end
