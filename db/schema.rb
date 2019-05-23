@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 20190523092356) do
 
   create_table "answers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text "content"
     t.bigint "user_id"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "question_id"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20190523092356) do
   create_table "questions_tags", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "question_id", null: false
     t.bigint "tag_id", null: false
+    t.index ["question_id", "tag_id"], name: "index_questions_tags_on_question_id_and_tag_id"
+    t.index ["tag_id", "question_id"], name: "index_questions_tags_on_tag_id_and_question_id"
   end
 
   create_table "tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
