@@ -1,6 +1,4 @@
-<ul class="users">
-  <% @questions.each do |question| %>
-
+<% @questions.each do |question| %>
 <div class="qa-q-list-item" id="q75295">
   <div class="qa-q-item-stats">
     <div class="qa-voting qa-voting-net" id="voting_75295">
@@ -24,7 +22,7 @@
   </div>
   <div class="qa-q-item-main">
     <div class="qa-q-item-title">
-      <li><%= link_to question.title, question %></li>
+      <%= link_to question.title, question %>
     </div>
     <span class="qa-q-item-avatar-meta"></span>
     <span class="qa-q-item-avatar">
@@ -47,5 +45,4 @@
   </div>
   <div class="qa-q-item-clear"></div>
 </div>
-  <% end %>
-</ul>
+<% end %>
