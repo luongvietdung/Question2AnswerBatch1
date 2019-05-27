@@ -5,6 +5,7 @@
         Ask a question
       </h1>
     </div>
+    <%= render 'shared/error_messages', object: f.object %>
     <% flash.each do |message_type, message| %>
       <div class="alert alert-<%= message_type %>"><%= message %></div>
     <% end %>
@@ -51,7 +52,14 @@
             </tr>
             <tr>
               <td class="qa-form-tall-data">
-                <div class="qa-form-tall-note"><span id="tag_examples_title" style="display:none;">Example tags: </span><span id="tag_complete_title" style="display:none;">Matching tags: </span><span id="tag_hints"></span></div>
+              <%= f.fields_for :tag do |ff| %>
+            <tr>
+              <td class="qa-form-tall-data">
+              <%= ff.text_field :content, placeholder: "Tag.." %>
+              </td>
+            </tr>
+            <% end %>
+                <div class="qa-form-tall-note"></div>
               </td>
             </tr>
           <tbody>
@@ -62,9 +70,6 @@
             </tr>
           </tbody>
         </table>
-        <input name="editor" type="hidden" value="WYSIWYG Editor">
-        <input name="code" type="hidden" value="0-1558682211-3e8c5ba05c70f7371c3ddeaed4e92e5ab6158465">
-        <input name="doask" type="hidden" value="1">
       </form>
     </div>
   </div>
