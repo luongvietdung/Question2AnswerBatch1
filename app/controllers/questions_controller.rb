@@ -8,6 +8,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     if @question.save
+      store_location
       flash[:success] = "Question created!"
       redirect_to root_url
     else
