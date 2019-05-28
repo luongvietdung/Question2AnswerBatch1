@@ -15,19 +15,7 @@
       </tr>
       <tr>
         <td class="qa-form-tall-data">
-          <%= f.text_field :title, placeholder: "Question title..." %>  
-        </td>
-      </tr>
-      <tr>
-        <td class="qa-form-tall-data">
-          <span id="similar"></span>
-        </td>
-      </tr>
-      <tr>
-        <td class="qa-form-tall-data">
-          <div class="qa-form-tall-note">
-            <div id="category_note"></div>
-          </div>
+          <%= f.text_field :title, placeholder: "Question title..." %>
         </td>
       </tr>
       <tr>
@@ -47,15 +35,14 @@
       </tr>
       <tr>
         <td class="qa-form-tall-data">
-        <%= f.fields_for :tag do |ff| %>
-      <tr>
-        <td class="qa-form-tall-data">
-        <%= ff.text_field :content, placeholder: "Tag.." %>
+          <%= f.fields_for :tag do |ff| %>
+          <tr>
+            <td class="qa-form-tall-data">
+            <%= ff.text_field :content, placeholder: "Tag.." %>
+            </td>
+          </tr>
+          <% end %>
         </td>
-      </tr>
-        <% end %>
-      <div class="qa-form-tall-note"></div>
-      </td>
       </tr>
       <tbody>
         <tr>
