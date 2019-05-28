@@ -14,7 +14,7 @@ class QuestionsController < ApplicationController
       flash[:success] = "Question created!"
       redirect_to @question
     else
-      render 'questions/new'
+      render :new
     end
   end
 
