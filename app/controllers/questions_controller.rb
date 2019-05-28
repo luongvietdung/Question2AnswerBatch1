@@ -1,25 +1,18 @@
 class QuestionsController < ApplicationController
+  before_action :logged_in_user, only: [:create, :destroy]
 
   def new
     @question = Question.new
-  end
-
-  def index
-    @questions = Question.all
   end
 
   def create
     @question = Question.new(question_params)
     if @question.save
       flash[:success] = "Question created!"
-      redirect_to @question
+      redirect_to root_url
     else
       render :new
     end
-  end
-
-  def show
-    @question = Question.find(params[:id])
   end
 
   private
