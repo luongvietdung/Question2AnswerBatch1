@@ -7,5 +7,5 @@ Rails.application.routes.draw do
 
   resources :users
   resources :account_activations, only: [:edit]
-  resources :questions
+  resources :questions, only: [:new, :create]
 end
