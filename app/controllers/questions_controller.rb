@@ -3,12 +3,12 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
+    @question.tags.build
   end
 
   def create
-    @question = Question.new(question_params)
+    @question = current_user.questions.build(question_params)
     if @question.save
-      store_location
       flash[:success] = "Question created!"
       redirect_to root_url
     else
@@ -18,6 +18,6 @@ class QuestionsController < ApplicationController
 
   private
   def question_params
-    params.require(:question).permit(:content, :title, tags_attributes: [:content])
+    params.require(:question).permit(:content, :title, tags_attributes: [:id, :content])
   end
 end
