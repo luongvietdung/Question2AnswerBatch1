@@ -23,5 +23,4 @@ class QuestionsController < ApplicationController
   def question_params
     params.require(:question).permit(:content, :title, tags_attributes: [:id, :content, :_destroy])
   end
-
 end
