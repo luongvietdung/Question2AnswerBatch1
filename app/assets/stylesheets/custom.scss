@@ -3767,3 +3767,7 @@ body{
     .icon-reply:before { content: '\e823'; }
     .icon-power:before { content: '\e824'; }
     .icon-link:before { content: '\e825'; }
+
+.qa-vote-up-button, .qa-vote-down-button, .qa-voted-up-button, .qa-voted-down-button, .qa-vote-up-disabled, .qa-vote-down-disabled {
+  text-indent: 21px !important;  
+}
