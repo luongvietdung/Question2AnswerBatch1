@@ -6,7 +6,12 @@ Rails.application.routes.draw do
   delete  "/logout",  to: "sessions#destroy"
   root "static_page#index"
 
-  resources :questions
+  resources :questions do
+    member do
+      put :like, to: "questions#up"
+      put :dislike, to: "questions#down"
+    end
+  end
   resources :users
   resources :account_activations, only: [:edit]
 end

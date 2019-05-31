@@ -1,7 +1,8 @@
 class QuestionsController < ApplicationController
-  before_action :logged_in_user, only: [:new, :create]
+  before_action :logged_in_user, only: [:new, :create, :up, :down]
 
   def index
+    @question = Question.all
   end
 
   def new
@@ -16,6 +17,18 @@ class QuestionsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def up
+    @question = Question.find(params[:id])
+    @question.up_by(current_user)
+    redirect_to :back
+  end
+
+  def down
+    @question = Question.find(params[:id])
+    @question.down_by(current_user)
+    redirect_to :back
   end
 
   private
