@@ -87,7 +87,13 @@ body{
 .signup-form form a:hover{
   text-decoration: underline;
 } 
-
+.qa-form-tall-label1 {
+  padding: 5px 0 0;
+  width: 1px;
+  padding: 1px;
+  white-space: nowrap;
+  text-align: right;
+}
 .login-form {
   width: 385px;
   margin: 30px auto;
@@ -2040,6 +2046,10 @@ body{
       color: #fff;
     }
 
+    .qa-form-tall-button{
+      width: 10px;
+      height: 5px;
+    }
     @media (max-width: 767px) {
       .qa-form-tall-button, .qa-form-wide-button, .qa-form-basic-button {
         width: 100%;

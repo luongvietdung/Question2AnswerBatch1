@@ -57,25 +57,35 @@
       </div>
       <div class="qa-q-view-tags">
         <ul class="qa-q-view-tag-list">
-          <%= render @question.tags %>
+          <li class="qa-q-view-tag-item">
+            <% (@question.tags).each do |tag| %>
+              <%= link_to tag.content, "#{tag.content}", class: "qa-tag-link" %>
+            <% end %>
+          </li>
         </ul>
       </div>
       <div class="qa-q-view-buttons">
-        <td class="qa-form-wide-data">
-          <button class="btn" data-toggle="collapse" data-target="#target">
-            comment
-          </button>
-        </td>
-        <td class="qa-form-wide-data">
-          <button class="btn" data-toggle="collapse" data-target="#target">
-            answer
-          </button>
-        </td>
-        <% unless logged_in? %>
+        <% if logged_in? %>
+        <div id="target1" class="collapse">
+          <%= render "answers/answer_form", question: @question, answer: @answer%>
+        </div>
+        <% else %>
           <div id="target" class="collapse">
             <h2>Please <%= link_to "Login", login_path %> or <%= link_to "Resign", new_user_path %> to add a answer.</h2>
           </div>
         <% end %>
+      </div>
+        <br>
+        <td class="qa-form-wide-data">
+          <button class="btn" data-toggle="collapse" data-target="#target">
+            Comment
+          </button>
+        </td>
+        <td class="qa-form-wide-data">
+          <button class="btn" data-toggle="collapse" data-target="#target1">
+            Answer
+          </button>
+        </td>
       </div>
     </div>
   </div>
