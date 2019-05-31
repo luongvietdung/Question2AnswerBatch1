@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root "static_page#index"
 
   resources :questions do 
-  	resources :answers
+    resources :answers
   end
   resources :users
   resources :account_activations, only: [:edit]
