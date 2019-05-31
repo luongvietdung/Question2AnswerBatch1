@@ -2,7 +2,7 @@ class AnswersController < ApplicationController
   before_action :find_question
 
   def new
-    @answer = Answer.new
+    @answer = Answer.new(question: question)
   end
   def create
     answer_data = answer_params.merge(user_id: current_user.id)

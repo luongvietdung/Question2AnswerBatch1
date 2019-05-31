@@ -67,7 +67,7 @@
       <div class="qa-q-view-buttons">
         <% if logged_in? %>
         <div id="target1" class="collapse">
-          <%= render "answers/answer_form", question: @question%>
+          <%= render "answers/answer_form", question: @question, answer: @answer%>
         </div>
         <% else %>
           <div id="target" class="collapse">

@@ -11,6 +11,7 @@ class QuestionsController < ApplicationController
     
   def show
     @question = Question.includes(:tags).find(params[:id])
+    @answer = @question.answers.build
   end
 
   def create
@@ -21,10 +22,6 @@ class QuestionsController < ApplicationController
     else
       render :new
     end
-  end
-  
-  def show
-    @question = Question.includes(:tags).find(params[:id])
   end
 
   private
