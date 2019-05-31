@@ -8,10 +8,10 @@ class AnswersController < ApplicationController
     answer_data = answer_params.merge(user_id: current_user.id)
     @answer = @question.answers.new answer_data
     if @answer.save
-      flash[:success] = "Question created!"
+      flash[:success] = "Answer created!"
       redirect_to @question
     else
-      flash[:fail] = "Fail to create answer!"
+      flash[:danger] = "Answer not created!"
       redirect_to @question
     end
   end
