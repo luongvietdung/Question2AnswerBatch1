@@ -11,8 +11,8 @@ class AnswersController < ApplicationController
       flash[:success] = "Question created!"
       redirect_to @question
     else
-      flash[:fail] = "fail"
-      redirect_to root_url
+      flash[:fail] = "Fail to create answer!"
+      redirect_to @question
     end
   end
 
