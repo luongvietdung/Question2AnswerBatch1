@@ -5,7 +5,7 @@
       Ask a question
     </h1>
   </div>
-  <%= render 'shared/error_messages', object: f.object %>
+  <%= render "shared/error_messages", object: f.object %>
   <div class="qa-part-form">
     <table class="qa-form-tall-table">
       <tr>
@@ -45,9 +45,9 @@
           Tags - use hyphens to combine words:
         </td>
       </tr>
-      <tbody class='fields'>
+      <tbody class="fields">
         <%= f.fields_for :tags do |builder| %>
-          <%= render 'tag', f: builder %>
+          <%= render "tag", f: builder %>
         <% end %>
       </tbody>
     </table>
@@ -55,7 +55,7 @@
       <table class="qa-form-tall-table">
       <tr>
         <td>
-          <%= link_to_add_row('Add more Tag', f, :tags, class: 'btn btn-primary') %>
+          <%= link_to_add_row("Add more Tag", f, :tags, class: "btn btn-primary") %>
         </td>
       </tr>
       <tbody>
