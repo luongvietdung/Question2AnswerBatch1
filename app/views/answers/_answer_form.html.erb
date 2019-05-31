@@ -1,0 +1,17 @@
+<%= form_for([question, Answer.new(question: question)]) do |f| %>
+<h2>Your answer</h2>
+<form method="post" action="../75407/issues-with-login-functionality" name="a_form">
+  <table class="qa-form-tall-table">
+    <tbody>
+      <tr>
+        <td class="qa-form-tall-label1x">
+          <%= f.text_area :content, size: "80x5"%>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+    <div colspan="1" class="qa-form-tall-buttons3">
+      <%= f.submit "Answer", class: "btn btn-success" %>
+    </div>
+</form>
+<% end %>
