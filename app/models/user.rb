@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :answers, dependent: :destroy
   has_many :votes, as: :voteable 
 
+  acts_as_voter
+
   enum role: [:manager, :member]
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

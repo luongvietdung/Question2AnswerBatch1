@@ -23,6 +23,18 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def upvote
+    @question = Question.find params[:id]
+    @question.upvote_by(current_user)
+    redirect_to root_path
+  end
+
+  def downvote
+    @question = Question.find params[:id]
+    @question.downvote_by(current_user)
+    redirect_to root_path
+  end
+
   private
   def question_params
     params.require(:question).permit(:content, :title, tags_attributes: [:id, :content, :_destroy])

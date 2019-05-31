@@ -8,4 +8,6 @@ class Question < ApplicationRecord
   
   validates :title, presence: true, length: { maximum: 100 }
   validates :content, presence: true
+
+  acts_as_votable
 end
