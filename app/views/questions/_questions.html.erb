@@ -4,8 +4,7 @@
       <div class="qa-vote-buttons qa-vote-buttons-net">
         <%= link_to like_question_path(questions), method: :put, class: "qa-vote-first-button qa-vote-up-button" do %>
           <span class="text-danger"><%= questions.get_upvotes.size %></span>
-        <% end%>
-
+        <% end %>
         <%= link_to dislike_question_path(questions), method: :put, 
           class: "qa-vote-second-button qa-vote-down-button" do  %>
           <span class="text-white"><%= questions.get_downvotes.size %></span>
