@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190524033903) do
+ActiveRecord::Schema.define(version: 20190524081756) do
 
   create_table "answers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20190524033903) do
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
-    create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "data_file_name", null: false
     t.string "data_content_type"
     t.integer "data_file_size"
