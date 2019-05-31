@@ -3,8 +3,8 @@
     <div class="qa-voting qa-voting-net" id="voting_75385">
       <div class="qa-vote-buttons qa-vote-buttons-net">
           <%= link_to "Up", like_question_path(questions), 
-            method: :put, class: "btn btn-xs btn-primary" %><span class="text-warning"> (<%= questions.get_upvotes.size %>)</span>
-          <%= link_to "Down", dislike_question_path(questions), method: :put, class: "btn btn-xs btn-danger" %><span class="  text-success"> (<%= questions.get_downvotes.size %>)</span>
+            method: :put, class: "btn btn-xs btn-primary", style: "color: white" %><span class="text-warning"> (<%= questions.get_upvotes.size %>)</span>
+          <%= link_to "Down", dislike_question_path(questions), method: :put, class: "btn btn-xs btn-danger",style: "color: white"  %><span class="  text-success"> (<%= questions.get_downvotes.size %>)</span>
       </div>
         <div class="qa-vote-count qa-vote-count-net">
           <span class="qa-netvote-count">
