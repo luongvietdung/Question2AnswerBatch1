@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   root "static_page#index"
 
   resources :questions do
-  	member do
-  		put :like, to: "questions#upvote"
-  		put :dislike, to: "questions#downvote"
-  	end	
+    member do
+      put :like, to: "questions#upvote"
+      put :dislike, to: "questions#downvote"
+    end
   end
   resources :users
   resources :account_activations, only: [:edit]
